@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import BottomTabNavigation from "./BottomTabNavigation";
@@ -12,13 +12,19 @@ const Navigation = () => {
   const colors = useContext(ThemeContext).colors;
 
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      theme={{
+        ...DefaultTheme,
+        colors: { ...DefaultTheme.colors, background: "transparent" },
+      }}
+    >
       <Stack.Navigator
         screenOptions={{
           navigationBarColor: colors.background,
           headerStyle: { backgroundColor: colors.background },
           headerTitleStyle: { color: colors.text },
           headerTintColor: colors.text,
+          // presentation: "transparentModal",
         }}
       >
         <Stack.Screen
@@ -26,7 +32,11 @@ const Navigation = () => {
           component={BottomTabNavigation}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="NotFound" component={NotFound} />
+        <Stack.Screen
+          name="NotFound"
+          component={NotFound}
+          options={{ presentation: "transparentModal" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
