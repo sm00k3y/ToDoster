@@ -2,8 +2,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React, { useContext } from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-import Home from "../screens/Home";
-import SettingsPage from "../screens/Settings";
+import Home from "../screens/home/Home";
+import SettingsPage from "../screens/settings/Settings";
 import Database from "../screens/Database";
 import { ThemeContext } from "../themes/ThemeProvider";
 

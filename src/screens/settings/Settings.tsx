@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Switch, Text, View } from "react-native";
 
-import { ThemeContext } from "../themes/ThemeProvider";
+import { ThemeContext } from "../../themes/ThemeProvider";
 import themedStyles from "./Settings.styles";
 
 export default function SettingsPage() {
