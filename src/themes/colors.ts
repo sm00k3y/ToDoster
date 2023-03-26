@@ -2,10 +2,14 @@ const Colors = {
   light: {
     background: "white",
     text: "black",
+    placeholder: "gray",
+    blurredBackground: "gray",
   },
   dark: {
     background: "black",
     text: "white",
+    placeholder: "#a9a9a9",
+    blurredBackground: "#181818",
   },
 };
 
